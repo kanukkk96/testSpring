@@ -1,6 +1,5 @@
 package com.example.testspring.service.impl;
 
-
 import com.example.testspring.dao.UserDao;
 import com.example.testspring.domain.User;
 import com.example.testspring.service.UserService;
