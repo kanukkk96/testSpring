@@ -7,17 +7,15 @@ public class User {
     public  int id;
     public  String username;
     public  int age;
-    //public  Date ctm;
-    //public String dress;
-    //public String color;
-    //public String size;
+    public  String dress;
 
     public User() {
     }
 
-    public User(String username, int age) {
+    public User(String username, int age, String dress) {
         this.username = username;
         this.age = age;
+        this.dress = dress;
         //this.ctm = new Date();
     }
 
@@ -44,17 +42,20 @@ public class User {
     }
 
     //public Date getCtm() {
-    //    return ctm;
+        //return ctm;
     //}
 
     //public void setCtm(Date ctm) {
     //    this.ctm = ctm;
-    //ㄷ}
+    //}
 
     public String getName() {
         return username;
     }
     public int getAge() {
         return age;
+    }
+    public String getDress() {
+        return dress;
     }
 }
