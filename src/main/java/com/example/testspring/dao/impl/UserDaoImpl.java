@@ -1,6 +1,6 @@
 package com.example.testspring.dao.impl;
 
-;
+
 import com.example.testspring.dao.UserDao;
 import org.springframework.stereotype.Repository;
 
@@ -28,6 +28,7 @@ public class UserDaoImpl implements UserDao {
         User u4 = new User();
         u4.username = "capp";
         u4.age = 14;
+
         List<User> userList = new ArrayList<User>();
 
         userList.add(u1);

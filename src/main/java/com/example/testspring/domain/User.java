@@ -7,7 +7,10 @@ public class User {
     public  int id;
     public  String username;
     public  int age;
-    public  Date ctm;
+    //public  Date ctm;
+    //public String dress;
+    //public String color;
+    //public String size;
 
     public User() {
     }
@@ -15,7 +18,7 @@ public class User {
     public User(String username, int age) {
         this.username = username;
         this.age = age;
-        this.ctm = new Date();
+        //this.ctm = new Date();
     }
 
     public int getId() {
@@ -40,13 +43,13 @@ public class User {
         this.age = age;
     }
 
-    public Date getCtm() {
-        return ctm;
-    }
+    //public Date getCtm() {
+    //    return ctm;
+    //}
 
-    public void setCtm(Date ctm) {
-        this.ctm = ctm;
-    }
+    //public void setCtm(Date ctm) {
+    //    this.ctm = ctm;
+    //ㄷ}
 
     public String getName() {
         return username;

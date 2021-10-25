@@ -7,23 +7,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import java.lang.NullPointerException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
-public class TestController {
+public class ShoppingController {
 
     @Autowired
     private UserService userService;
 
-
-    @GetMapping("test.do" )
+    @GetMapping("shop.do" )
     public String test(HttpServletRequest req, HttpServletResponse res){
         User user = userService.getUserList();
-        //return user.toString();
-        return user.getName();
+        return "사용자 이름 : " + user.getName();
     }
 
 }
