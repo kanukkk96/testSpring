@@ -13,9 +13,10 @@ public class ShopUser {
     public ShopUser() {
     }
 
-    public ShopUser(String username_shop, int age_shop) {
+    public ShopUser(String username_shop, int age_shop, String dress) {
         this.username_shop = username_shop;
         this.age_shop = age_shop;
+        this.dress = dress;
     }
 
     public String getUsername_shop() {

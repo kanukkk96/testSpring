@@ -26,9 +26,10 @@ public class UserServiceImpl implements UserService {
 
         for(int i=0;i<userList.size();i++){
             System.out.println(userList.get(i).getName());
-            if(userList.get(i).getAge() == 14){
+            if(userList.get(i).getAge() == 27){
                 return userList.get(i);
             }
+            return userList.get(i);
         }
 
         return null;

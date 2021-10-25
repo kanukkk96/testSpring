@@ -26,9 +26,11 @@ public class ShopServiceImpl implements ShopService {
 
         for(int i=0;i<userList_shop.size();i++){
             System.out.println(userList_shop.get(i).getName_shop());
-            if(userList_shop.get(i).getDress() == "white"){
+            if(userList_shop.get(i).getAge_shop() == 22){
                 return userList_shop.get(i);
             }
+            //System.out.println(userList_shop.get(i));
+            return userList_shop.get(i);
         }
 
         return null;

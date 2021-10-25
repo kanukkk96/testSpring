@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.lang.NullPointerException;
 
 @RestController
 public class ShopController {
@@ -20,7 +21,8 @@ public class ShopController {
     @GetMapping("shop.do" )
     public String test(HttpServletRequest req, HttpServletResponse res){
         ShopUser shopuser = shopService.getUserList_shop();
-        return "white 사용자 정보 "+ shopuser.getName_shop();
+        return "yellow 사용자 정보 :"+ shopuser.getName_shop();
+        //return shopuser.getName_shop();
 
     }
 
