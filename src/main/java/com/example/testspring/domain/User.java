@@ -41,13 +41,6 @@ public class User {
         this.age = age;
     }
 
-    //public Date getCtm() {
-        //return ctm;
-    //}
-
-    //public void setCtm(Date ctm) {
-    //    this.ctm = ctm;
-    //}
 
     public String getName() {
         return username;
@@ -57,5 +50,16 @@ public class User {
     }
     public String getDress() {
         return dress;
+    }
+
+    public int size() {
+        return size();
+    }
+
+    public boolean isEmpty() {
+        if (username.isEmpty()) {
+            System.out.println("null값");
+        }
+        return false;
     }
 }

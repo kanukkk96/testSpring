@@ -25,11 +25,11 @@ public class UserServiceImpl implements UserService {
         List<User> userList =userDao.getUserById(id);
 
         for(int i=0;i<userList.size();i++){
-            System.out.println(userList.get(i).getName());
-            if(userList.get(i).getAge() == 27){
-                return userList.get(i);
-            }
-            return userList.get(i);
+            System.out.println(userList.get(i).toString());
+            //System.out.println(userList.get(i));
+            //if(userList.get(i).getAge() == 26){
+                //return userList.get(i);
+            //}
         }
 
         return null;
