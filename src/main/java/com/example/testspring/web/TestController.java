@@ -7,44 +7,29 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
 import java.lang.NullPointerException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@RestController
+@Controller
 public class TestController {
 
     @Autowired
     private UserService userService;
 
     @GetMapping("test.do" )
-    public String test(HttpServletRequest req, HttpServletResponse res){
-        User user = userService.getUserList();
+    public ModelAndView test(HttpServletRequest req, HttpServletResponse res){
+        ModelAndView mav = new ModelAndView("consumer_list");
 
-        while(user != null){
-            if(user.isEmpty()){
-                System.out.println(user.isEmpty());
-            }
-            else{
-                System.out.println("not null");
-                for(int i=0;i<user.size();i++){
-                    System.out.print(user.getUsername()+ " " + user.getAge() + " " + user.getDress());
+        List<User> consumerList = userService.getUserList();
 
-                }
-            }
-        }
+        mav.addObject("consumerList", consumerList);
 
-
-
-        //return user.getName();
-
-
-
-            //return user.getUsername()+ " " + user.getAge() + " " + user.getDress();
-
-        return null;
+        return mav;
     }
 
 }

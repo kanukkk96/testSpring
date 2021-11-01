@@ -1,9 +1,10 @@
 package com.example.testspring.service;
 
-import com.example.testspring.domain.ShopUser;
+import com.example.testspring.domain.Shop;
 
+import java.util.List;
 
 public interface ShopService {
 
-    ShopUser getUserList_shop();
+    List<Shop> getShopList();
 }

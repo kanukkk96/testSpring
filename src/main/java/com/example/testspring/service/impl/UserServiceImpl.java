@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -16,23 +15,28 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     private Integer id;
+    int i=0;
 
     public UserServiceImpl() {
     }
 
     @Override
-    public User getUserList() {
+    public List<User> getUserList() {
         List<User> userList =userDao.getUserById(id);
+        assert userList != null;
 
+        /*
         for(int i=0;i<userList.size();i++){
             System.out.println(userList.get(i).toString());
             //System.out.println(userList.get(i));
-            //if(userList.get(i).getAge() == 26){
-                //return userList.get(i);
-            //}
-        }
 
-        return null;
+            if(userList.get(i) != null){
+                return userList.get(i);
+            }
+        }
+        */
+        return userList;
+
     }
 
 }

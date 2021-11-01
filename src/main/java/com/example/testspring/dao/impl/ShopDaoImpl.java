@@ -5,37 +5,41 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.example.testspring.domain.ShopUser;
+import com.example.testspring.domain.Shop;
 
 @Repository
 public class ShopDaoImpl implements ShopDao {
 
     @Override
-    public List<ShopUser> getUserById_shop(Integer id) {
+    public List<Shop> getShopById(Integer id) {
+        Shop s1 = new Shop();
+        s1.clothes = "black jacket";
+        s1.color = "black";
+        s1.clothes_size = "XL";
 
-        ShopUser s1 = new ShopUser();
-        s1.username_shop = "kanuk";
-        s1.age_shop = 27;
-        s1.dress = "black";
+        Shop s2 = new Shop();
+        s2.clothes = "white jacket";
+        s2.color = "white";
+        s2.clothes_size = "L";
 
-        ShopUser s2 = new ShopUser();
-        s2.username_shop = "geonwoo";
-        s2.age_shop = 22;
-        s2.dress = "white";
+        Shop s3 = new Shop();
+        s3.clothes = "yellow pants";
+        s3.color = "yellow";
+        s3.clothes_size = "M";
 
-        ShopUser s3 = new ShopUser();
-        s3.username_shop = "kanu";
-        s3.age_shop = 26;
-        s3.dress = "yellow";
+        Shop s4 = new Shop();
+        s4.clothes = "blue pants";
+        s4.color = "blue";
+        s4.clothes_size = "xl";
 
+        List<Shop> shopList = new ArrayList<Shop>();
 
-        List<ShopUser> userList_shop = new ArrayList<ShopUser>();
+        shopList.add(s1);
+        shopList.add(s2);
+        shopList.add(s3);
+        shopList.add(s4);
 
-        userList_shop.add(s1);
-        userList_shop.add(s2);
-        userList_shop.add(s3);
-
-        return userList_shop;
+        return shopList;
     }
 
 }

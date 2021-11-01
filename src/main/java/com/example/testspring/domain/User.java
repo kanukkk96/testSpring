@@ -35,12 +35,9 @@ public class User {
         this.username = username;
     }
 
-
-
     public void setAge(int age) {
         this.age = age;
     }
-
 
     public String getName() {
         return username;
@@ -52,14 +49,17 @@ public class User {
         return dress;
     }
 
-    public int size() {
-        return size();
-    }
+    //public int size() {
+    //    return size();
+    //}
 
+    /*
     public boolean isEmpty() {
         if (username.isEmpty()) {
             System.out.println("null값");
         }
         return false;
     }
+
+     */
 }
