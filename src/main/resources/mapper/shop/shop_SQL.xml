@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.testspring.mapper.ShopMapper">
+
+
+    <select id="selectShopping" resultType="ShopVO">
+       SELECT
+        product_id
+       , clothes
+       , color
+       , clothes_size
+        FROM shopping
+
+    </select>
+
+
+</mapper>

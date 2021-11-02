@@ -38,6 +38,36 @@
 </head>
 
 <body>
+
+
+
+<div class="container">
+    <br>
+    <br>
+    <h1 class="display-4 text-center">shopping category</h1>
+    <div class="row mt-4">
+        <table class="table table-dark">
+            <thead class="thead-light text-center">
+            <tr>
+                <th>옷</th>
+                <th>색상</th>
+                <th>사이즈</th>
+            </tr>
+            </thead>
+            <tbody class="text-center">
+            <c:forEach var="product" items="${productList}">
+                <tr>
+                    <td>${product.clothes}</td>
+                    <td>${product.color}</td>
+                    <td>${product.clothesSize}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+        </table>
+    </div>
+</div>
+
 <div class="row mt-5">
     <div class="col-md-6 offset-3 mt-5">
         <div class="card">
@@ -49,34 +79,6 @@
                 <input type="text" data-role="tagsinput" name="tags" class="form-control">
             </div>
         </div>
-    </div>
-</div>
-
-<div class="container">
-    <br>
-    <br>
-    <h1 class="display-4 text-center">shop members</h1>
-    <div class="row mt-4">
-        <table class="table table-dark">
-            <thead class="thead-light text-center">
-            <tr>
-                <th>옷</th>
-                <th>색상</th>
-                <th>사이즈</th>
-                <th>사진</th>
-            </tr>
-            </thead>
-            <tbody class="text-center">
-            <c:forEach var="product" items="${productList}">
-                <tr>
-                    <td>${product.clothes}</td>
-                    <td>${product.color}</td>
-                    <td>${product.clothes_size}</td>
-                    <td><img src="/img/img1.jpg"></td>
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
     </div>
 </div>
 

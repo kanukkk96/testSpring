@@ -2,17 +2,17 @@ package com.example.testspring.domain;
 
 public class Shop {
 
-    public int id;
+    public int productId;
     public String clothes;
     public String color;
-    public String clothes_size;
+    public String clothesSize;
 
-    public int getId() {
-        return id;
+
+    public int getProductId() {
+        return productId;
     }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public String getClothes() {
@@ -31,12 +31,21 @@ public class Shop {
         this.color = color;
     }
 
-    public String getClothes_size() {
-        return clothes_size;
+    public String getClothesSize() {
+        return clothesSize;
     }
 
-    public void setClothes_size(String clothes_size) {
-        this.clothes_size = clothes_size;
+    public void setClothesSize(String clothesSize) {
+        this.clothesSize = clothesSize;
+    }
+
+    @Override
+    public String toString() {
+        return "Shop{" +
+                ", clothes='" + clothes + '\'' +
+                ", color='" + color + '\'' +
+                ", clothes_size='" + clothesSize + '\'' +
+                '}';
     }
 }
 

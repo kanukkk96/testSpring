@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput-angular.min.js" integrity="sha512-KT0oYlhnDf0XQfjuCS/QIw4sjTHdkefv8rOJY5HHdNEZ6AmOh1DW/ZdSqpipe+2AEXym5D0khNu95Mtmw9VNKg==" crossorigin="anonymous"></script>
     <style type="text/css">
         .bootstrap-tagsinput{
-            width: 100%;
+            width: 50%;
         }
         .label-info{
             background-color: #17a2b8;
@@ -21,9 +21,9 @@
             display: inline-block;
             padding: .25em .4em;
             font-size: 75%;
-            font-weight: 700;
+            font-weight: 500;
             line-height: 1;
-            text-align: center;
+            text-align: left;
             white-space: nowrap;
             vertical-align: baseline;
             border-radius: .25rem;
@@ -38,19 +38,6 @@
 </head>
 
 <body>
-<div class="row mt-5">
-    <div class="col-md-6 offset-3 mt-5">
-        <div class="card">
-            <div class="card-header bg-info text-white">
-                <h2><strong>tag 연습</strong></h2>
-            </div>
-            <div class="card-body">
-                <label>Tags :</label>
-                <input type="text" data-role="tagsinput" name="tags" class="form-control">
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="container">
     <br>
@@ -62,6 +49,7 @@
             <tr>
                 <th>이름</th>
                 <th>나이</th>
+                <th>태그 : 고객요구사항</th>
             </tr>
             </thead>
             <tbody class="text-center">
@@ -69,6 +57,11 @@
                 <tr>
                     <td>${consumer.username}</td>
                     <td>${consumer.age}</td>
+                    <td>
+                        <div class="card-body">
+                            <input type="text" data-role="tagsinput" name="tags" class="form-control">
+                        </div>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>

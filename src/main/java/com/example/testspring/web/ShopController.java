@@ -23,7 +23,8 @@ public class ShopController {
     private ShopService shopService;
 
     @GetMapping("shop.do" )
-    public ModelAndView test(HttpServletRequest req, HttpServletResponse res){
+    public ModelAndView test(HttpServletRequest req, HttpServletResponse res) throws Exception
+    {
         ModelAndView mav = new ModelAndView("product_list");
 
         List<Shop> productList = shopService.getShopList();
