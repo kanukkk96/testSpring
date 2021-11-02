@@ -34,7 +34,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Spring Web MVC Student Home</title>
+    <title>고객 관리 페이지</title>
 </head>
 
 <body>
@@ -49,7 +49,8 @@
             <tr>
                 <th>이름</th>
                 <th>나이</th>
-                <th>태그 : 고객요구사항</th>
+                <th>고객요구사항</th>
+                <th>태그</th>
             </tr>
             </thead>
             <tbody class="text-center">
@@ -57,6 +58,7 @@
                 <tr>
                     <td>${consumer.username}</td>
                     <td>${consumer.age}</td>
+                    <td>${consumer.etc}</td>
                     <td>
                         <div class="card-body">
                             <input type="text" data-role="tagsinput" name="tags" class="form-control">

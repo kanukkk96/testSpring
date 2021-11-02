@@ -9,5 +9,6 @@
     </settings>
     <typeAliases>
         <typeAlias type="com.example.testspring.domain.Shop" alias="ShopVO" />
+        <typeAlias type="com.example.testspring.domain.User" alias="UserVO" />
     </typeAliases>
 </configuration>

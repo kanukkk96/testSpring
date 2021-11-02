@@ -22,7 +22,7 @@ public class TestController {
     private UserService userService;
 
     @GetMapping("test.do" )
-    public ModelAndView test(HttpServletRequest req, HttpServletResponse res){
+    public ModelAndView test(HttpServletRequest req, HttpServletResponse res)throws Exception{
         ModelAndView mav = new ModelAndView("consumer_list");
 
         List<User> consumerList = userService.getUserList();
@@ -31,5 +31,4 @@ public class TestController {
 
         return mav;
     }
-
 }

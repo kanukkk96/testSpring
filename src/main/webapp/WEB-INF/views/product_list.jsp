@@ -63,7 +63,7 @@
                 </tr>
             </c:forEach>
             </tbody>
-            <button type="button" class="btn btn-outline-primary">Primary</button>
+            <button type="button" class="btn btn-outline-primary" onClick="location.href='index.html'>Primary</button>
         </table>
     </div>
 </div>

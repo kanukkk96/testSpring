@@ -6,8 +6,8 @@
 
     <select id="selectShopping" resultType="ShopVO">
        SELECT
-        product_id
-       , clothes
+
+       clothes
        , color
        , clothes_size
         FROM shopping

@@ -22,7 +22,7 @@ public class ShopController {
     @Autowired
     private ShopService shopService;
 
-    @GetMapping("shop.do" )
+    @GetMapping("shop.do")
     public ModelAndView test(HttpServletRequest req, HttpServletResponse res) throws Exception
     {
         ModelAndView mav = new ModelAndView("product_list");
