@@ -6,6 +6,9 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" integrity="sha512-xmGTNt20S0t62wHLmQec2DauG9T+owP9e6VU8GigI0anN7OXLip9i7IwEhelasml2osdxX71XcYm6BQunTQeQg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha256-OFRAJNoaD8L3Br5lglV7VyLRf0itmoBzWUoM+Sji4/8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
@@ -60,12 +63,25 @@
                     <td>${product.clothes}</td>
                     <td>${product.color}</td>
                     <td>${product.clothesSize}</td>
+
                 </tr>
             </c:forEach>
             </tbody>
-            <button type="button" class="btn btn-outline-primary" onClick="location.href='index.html'>Primary</button>
+            <!--<div class="form-row float-right"><button type="button" class="btn btn-outline-primary">Primary</button></div>-->
+
+
         </table>
     </div>
+</div>
+
+<div class="insertData">
+    <form action="/shop.do" method="post" id="insert_data">
+        Clothes : <input name="clothes" type="text" size="10" id="clothes">
+        Color : <input name="color" type="text" size="10" id="color">
+        Clothes_size : <input name="clothes_size" type="text" size="10" id="clothes_size">
+        <button type="submit">save</button>
+<%--        <button type="button" onclick="location.href='test.do' " class="btn btn-success">watch for saved table</button>--%>
+    </form>
 </div>
 
 <div class="row mt-5">

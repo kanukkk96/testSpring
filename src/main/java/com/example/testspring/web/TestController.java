@@ -31,4 +31,15 @@ public class TestController {
 
         return mav;
     }
+
+    @GetMapping("test1.do" )
+    public ModelAndView test1(HttpServletRequest req, HttpServletResponse res)throws Exception{
+        ModelAndView mav = new ModelAndView("consumer_list");
+
+        List<User> consumerList = userService.getUserList();
+
+        mav.addObject("consumerList", consumerList);
+
+        return mav;
+    }
 }

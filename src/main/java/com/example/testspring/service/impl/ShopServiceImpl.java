@@ -19,7 +19,11 @@ public class ShopServiceImpl implements ShopService {
     public List<Shop> getShopList() throws Exception{
         List<Shop> shopList = shopMapper.selectShopping();
         return shopList;
+    }
 
+    @Override
+    public void insert_data(Shop shop) throws Exception {
+        shopMapper.insert_data(shop);
     }
 
 }
