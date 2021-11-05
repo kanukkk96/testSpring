@@ -20,6 +20,8 @@ public class ShopServiceImpl implements ShopService {
         List<Shop> shopList = shopMapper.selectShopping();
         return shopList;
     }
+
+    @Override
     public List<Shop> getMore() throws Exception{
         List<Shop> moreDetail = shopMapper.more_detail();
         return moreDetail;

@@ -13,6 +13,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha256-OFRAJNoaD8L3Br5lglV7VyLRf0itmoBzWUoM+Sji4/8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput-angular.min.js" integrity="sha512-KT0oYlhnDf0XQfjuCS/QIw4sjTHdkefv8rOJY5HHdNEZ6AmOh1DW/ZdSqpipe+2AEXym5D0khNu95Mtmw9VNKg==" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function goDetail(idx){
+            var goDetailFrm = document.goDetailFrm;
+
+            document.getElementById("productId").value = idx;
+            goDetailFrm.submit();
+        }
+
+    </script>
+
     <style type="text/css">
         .bootstrap-tagsinput{
             width: 100%;
@@ -41,6 +51,9 @@
 </head>
 
 <body>
+<form name="goDetailFrm" action="detail.do"  method="post">
+    <input type="text" id="productId" name="productId" value="">
+</form>
 <div class="container">
     <br>
     <br>
@@ -67,11 +80,11 @@
             <tbody class="text-center">
             <c:forEach var="product" items="${productList}">
                 <tr>
-                    <td>${product.clothes}</td>
+                    <td>${product.clothes}  >>>  ${product.productId}</td>
                     <td>${product.color}</td>
                     <td>${product.clothesSize}</td>
                     <td><div class="form-row float-center">
-                        <button type="submit" class="btn btn-outline-primary" onclick=location.href='/detail.do'>DETAIL
+                        <button type="submit" class="btn btn-outline-primary" onclick='goDetail(${product.productId})'>DETAIL
                         </button></div></td>
                 </tr>
             </c:forEach>
@@ -106,6 +119,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 </script>
+
 </body>
 
 </html>

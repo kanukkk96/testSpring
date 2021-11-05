@@ -5,8 +5,12 @@
 
 
     <select id="selectShopping" resultType="ShopVO">
-       SELECT clothes, color, clothes_size, clothes_review FROM shopping
-
+       SELECT
+              product_id
+            , color
+            , clothes_size
+            , clothes_review
+       FROM shopping
     </select>
 
     <insert id="insert_data" parameterType="ShopVO">
@@ -14,9 +18,14 @@
         VALUES (#{clothes},#{color},#{clothesSize},#{clothesReview})
     </insert>
 
-    <select id="more_detail" resultType="ShopVO">
---         SELECT clothes, color, clothes_size, clothes_review FROM shopping
-        SELECT * FROM shopping
+    <select id="more_detail" parameterType="ShopVO" resultType="ShopVO">
+        SELECT
+               product_id
+             , clothes
+             , color
+             , clothes_size
+             , clothes_review
+        FROM shopping WHERE product_id = #{productId}
     </select>
 
 
