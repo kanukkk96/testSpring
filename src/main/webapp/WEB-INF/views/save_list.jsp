@@ -15,9 +15,9 @@
         Clothes_size : <input name="clothes_size" type="text" size="10" id="clothes_size">
         <br>
         Clothes_review : <input name="clothes_review" type="text" size="100" id="clothes_review">
-        <button type="submit">save</button>
-<%--        <button type="submit" onclick="location.href='/shop.do'">shopping list</button>--%>
-<%--        <button onclick="location.href='/shop.do'">shopping list</button>--%>
+        <button type="submit" onclick="location.href='/shop.do'">save</button>
+        <%--        <button type="submit" onclick="location.href='/shop.do'">shopping list</button>--%>
+        <%--        <button onclick="location.href='/shop.do'">shopping list</button>--%>
         <%--        <button type="button" onclick="location.href='test.do' " class="btn btn-success">watch for saved table</button>--%>
     </form>
     <br>

@@ -21,7 +21,7 @@ public class ShopController {
     @Autowired
     private ShopService shopService;
 
-    @GetMapping("shop.do")
+    @GetMapping("shop.do") // 쇼핑리스트 (detail 제외)
     public ModelAndView test(HttpServletRequest req, HttpServletResponse res) throws Exception {
         ModelAndView mav = new ModelAndView("product_list");
 
@@ -32,24 +32,7 @@ public class ShopController {
         return mav;
     }
 
-//    @PostMapping("shop.do")
-//    public ModelAndView test1(HttpServletRequest req, HttpServletResponse res, @RequestParam(value = "clothes") String clothes
-//            , @RequestParam(value = "color") String color, @RequestParam(value = "clothes_size") String clothes_size) throws Exception {
-//        Shop shop = new Shop();
-//        shop.setClothes(clothes);
-//        shop.setColor(color);
-//        shop.setClothesSize(clothes_size);
-//
-//        shopService.insert_data(shop);
-//        ModelAndView mav = new ModelAndView("product_list");
-//
-//        List<Shop> productList = shopService.getShopList();
-//
-//        mav.addObject("productList", productList);
-//
-//        return mav;
-//    }
-    @GetMapping("save.do")
+    @GetMapping("save.do") // dress 내용 저장 (detail까지)
     public ModelAndView test1(HttpServletRequest req, HttpServletResponse res) throws Exception
     {
 
@@ -61,7 +44,17 @@ public class ShopController {
 
         return mav;
     }
-    @PostMapping("shop.do")
+    @GetMapping("detail.do") // 쇼핑리스트 (detail 포함 - 각각 제품의 product_id를 이용해 불러냄)
+    public ModelAndView test2(HttpServletRequest req, HttpServletResponse res) throws Exception {
+        ModelAndView mav = new ModelAndView("more_product");
+
+        List<Shop> moreProduct = shopService.getMore();
+
+        mav.addObject("moreProduct", moreProduct);
+
+        return mav;
+    }
+    @PostMapping("save.do") // 매핑은 save.do에
     public ModelAndView test1(HttpServletRequest req, HttpServletResponse res,
                               @RequestParam(value="clothes") String clothes,
                               @RequestParam(value="color") String color,
@@ -83,4 +76,6 @@ public class ShopController {
 
         return mav;
     }
+
+
 }
