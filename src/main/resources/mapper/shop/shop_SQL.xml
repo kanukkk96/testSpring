@@ -10,7 +10,7 @@
     </select>
 
     <insert id="insert_data" parameterType="ShopVO">
-        INSERT INTO shopping(clothes,color,clothes_size)
+        INSERT INTO shopping(clothes,color,clothes_size,clothes_review)
         VALUES (#{clothes},#{color},#{clothesSize},#{clothesReview})
     </insert>
 
