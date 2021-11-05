@@ -6,8 +6,16 @@ public class Shop {
     public String clothes;
     public String color;
     public String clothesSize;
+    public String clothesReview;
 
 
+    public String getClothesReview() {
+        return clothesReview;
+    }
+
+    public void setClothesReview(String clothesReview) {
+        this.clothesReview = clothesReview;
+    }
     public int getProductId() {
         return productId;
     }

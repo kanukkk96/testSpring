@@ -22,8 +22,7 @@ public class ShopController {
     private ShopService shopService;
 
     @GetMapping("shop.do")
-    public ModelAndView test(HttpServletRequest req, HttpServletResponse res) throws Exception
-    {
+    public ModelAndView test(HttpServletRequest req, HttpServletResponse res) throws Exception {
         ModelAndView mav = new ModelAndView("product_list");
 
         List<Shop> productList = shopService.getShopList();
@@ -33,23 +32,55 @@ public class ShopController {
         return mav;
     }
 
+//    @PostMapping("shop.do")
+//    public ModelAndView test1(HttpServletRequest req, HttpServletResponse res, @RequestParam(value = "clothes") String clothes
+//            , @RequestParam(value = "color") String color, @RequestParam(value = "clothes_size") String clothes_size) throws Exception {
+//        Shop shop = new Shop();
+//        shop.setClothes(clothes);
+//        shop.setColor(color);
+//        shop.setClothesSize(clothes_size);
+//
+//        shopService.insert_data(shop);
+//        ModelAndView mav = new ModelAndView("product_list");
+//
+//        List<Shop> productList = shopService.getShopList();
+//
+//        mav.addObject("productList", productList);
+//
+//        return mav;
+//    }
+    @GetMapping("save.do")
+    public ModelAndView test1(HttpServletRequest req, HttpServletResponse res) throws Exception
+    {
+
+        ModelAndView mav = new ModelAndView("save_list");
+
+        List<Shop> saveList = shopService.getShopList();
+
+        mav.addObject("saveList", saveList);
+
+        return mav;
+    }
     @PostMapping("shop.do")
-    public ModelAndView test1(HttpServletRequest req, HttpServletResponse res,@RequestParam(value="clothes") String clothes
-    ,@RequestParam(value="color") String color,@RequestParam(value="clothes_size") String clothes_size) throws Exception
+    public ModelAndView test1(HttpServletRequest req, HttpServletResponse res,
+                              @RequestParam(value="clothes") String clothes,
+                              @RequestParam(value="color") String color,
+                              @RequestParam(value="clothes_size") String clothes_size,
+                              @RequestParam(value="clothes_review") String clothes_review) throws Exception
     {
         Shop shop = new Shop();
         shop.setClothes(clothes);
         shop.setColor(color);
         shop.setClothesSize(clothes_size);
+        shop.setClothesReview(clothes_review);
 
         shopService.insert_data(shop);
-        ModelAndView mav = new ModelAndView("product_list");
+        ModelAndView mav = new ModelAndView("save_list");
 
-        List<Shop> productList = shopService.getShopList();
+        List<Shop> saveList = shopService.getShopList();
 
-        mav.addObject("productList", productList);
+        mav.addObject("saveList", saveList);
 
         return mav;
     }
-
 }

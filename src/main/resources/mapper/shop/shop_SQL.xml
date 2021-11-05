@@ -5,13 +5,13 @@
 
 
     <select id="selectShopping" resultType="ShopVO">
-       SELECT clothes, color, clothes_size FROM shopping
+       SELECT clothes, color, clothes_size, clothes_review FROM shopping
 
     </select>
 
     <insert id="insert_data" parameterType="ShopVO">
         INSERT INTO shopping(clothes,color,clothes_size)
-        VALUES (#{clothes},#{color},#{clothesSize})
+        VALUES (#{clothes},#{color},#{clothesSize},#{clothesReview})
     </insert>
 
 

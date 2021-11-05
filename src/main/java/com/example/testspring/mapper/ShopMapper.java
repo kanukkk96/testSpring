@@ -14,6 +14,4 @@ public interface ShopMapper {
 
     public void insert_data(Shop shop);
 
-
-
 }

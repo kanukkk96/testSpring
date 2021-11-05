@@ -18,7 +18,7 @@
             width: 100%;
         }
         .label-info{
-            background-color: #17a2b8;
+            background-color: #1d89be;
         }
         .label {
             display: inline-block;
@@ -41,13 +41,19 @@
 </head>
 
 <body>
-
-
-
 <div class="container">
     <br>
     <br>
     <h1 class="display-4 text-center">shopping category</h1>
+    <br>
+<%--    <div class="saveData">--%>
+<%--        <form action="/save.do" method="post" id="save_data">--%>
+<%--            <button type="submit" onclick="location.href='save_list.jsp'">insert new dress</button>--%>
+<%--            &lt;%&ndash;        <button type="button" onclick="location.href='test.do' " class="btn btn-success">watch for saved table</button>&ndash;%&gt;--%>
+<%--        </form>--%>
+<%--    </div>--%>
+    <button type="submit" onclick="location.href='/save.do'">insert new dress</button>
+    <br>
     <div class="row mt-4">
         <table class="table table-dark">
             <thead class="thead-light text-center">
@@ -55,6 +61,7 @@
                 <th>옷</th>
                 <th>색상</th>
                 <th>사이즈</th>
+                <th>디테일</th>
             </tr>
             </thead>
             <tbody class="text-center">
@@ -63,40 +70,31 @@
                     <td>${product.clothes}</td>
                     <td>${product.color}</td>
                     <td>${product.clothesSize}</td>
-
+                    <td><div class="form-row float-center">
+                        <button type="submit" class="btn btn-outline-primary" onclick=location.href='/detail.do'>DETAIL
+                        </button></div></td>
                 </tr>
             </c:forEach>
             </tbody>
             <!--<div class="form-row float-right"><button type="button" class="btn btn-outline-primary">Primary</button></div>-->
-
-
         </table>
     </div>
 </div>
 
-<div class="insertData">
-    <form action="/shop.do" method="post" id="insert_data">
-        Clothes : <input name="clothes" type="text" size="10" id="clothes">
-        Color : <input name="color" type="text" size="10" id="color">
-        Clothes_size : <input name="clothes_size" type="text" size="10" id="clothes_size">
-        <button type="submit">save</button>
-<%--        <button type="button" onclick="location.href='test.do' " class="btn btn-success">watch for saved table</button>--%>
-    </form>
-</div>
 
-<div class="row mt-5">
-    <div class="col-md-6 offset-3 mt-5">
-        <div class="card">
-            <div class="card-header bg-info text-white">
-                <h2><strong>tag 연습</strong></h2>
-            </div>
-            <div class="card-body">
-                <label>Tags :</label>
-                <input type="text" data-role="tagsinput" name="tags" class="form-control">
-            </div>
-        </div>
-    </div>
-</div>
+<%--<div class="row mt-5">--%>
+<%--    <div class="col-md-6 offset-3 mt-5">--%>
+<%--        <div class="card">--%>
+<%--            <div class="card-header bg-info text-white">--%>
+<%--                <h2><strong>tag 연습</strong></h2>--%>
+<%--            </div>--%>
+<%--            <div class="card-body">--%>
+<%--                <label>Tags :</label>--%>
+<%--                <input type="text" data-role="tagsinput" name="tags" class="form-control">--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
