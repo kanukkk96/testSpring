@@ -7,6 +7,6 @@ import java.util.List;
 public interface ShopService {
 
     List<Shop> getShopList() throws Exception;
-    List<Shop> getMore() throws Exception;
+    List<Shop> getMore(Shop paramData) throws Exception;
     void insert_data(Shop shop) throws Exception;
 }

@@ -23,6 +23,7 @@
         <table class="table table-dark">
             <thead class="thead-light text-center">
             <tr>
+                <th>번호</th>
                 <th>옷</th>
                 <th>색상</th>
                 <th>사이즈</th>
@@ -32,6 +33,7 @@
             <tbody class="text-center">
             <c:forEach var="more" items="${moreProduct}">
                 <tr>
+                    <td>${more.productId}</td>
                     <td>${more.clothes}</td>
                     <td>${more.color}</td>
                     <td>${more.clothesSize}</td>

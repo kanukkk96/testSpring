@@ -71,6 +71,7 @@
         <table class="table table-dark">
             <thead class="thead-light text-center">
             <tr>
+                <th>번호</th>
                 <th>옷</th>
                 <th>색상</th>
                 <th>사이즈</th>
@@ -80,7 +81,8 @@
             <tbody class="text-center">
             <c:forEach var="product" items="${productList}">
                 <tr>
-                    <td>${product.clothes}  >>>  ${product.productId}</td>
+                    <td>${product.productId}</td>
+                    <td>${product.clothes}</td>
                     <td>${product.color}</td>
                     <td>${product.clothesSize}</td>
                     <td><div class="form-row float-center">

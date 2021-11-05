@@ -12,7 +12,7 @@ public interface ShopMapper {
 
     public List<Shop> selectShopping() throws Exception;
 
-    public List<Shop> more_detail() throws Exception;
+    public List<Shop> more_detail(Shop paramData) throws Exception;
 
     public void insert_data(Shop shop);
 

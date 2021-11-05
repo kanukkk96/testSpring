@@ -35,10 +35,12 @@ public class ShopController {
 
     @RequestMapping("detail.do") // 쇼핑리스트 (detail 포함 - 각각 제품의 product_id를 이용해 불러냄)
     public ModelAndView test2(HttpServletRequest req, HttpServletResponse res,
-                              @RequestParam(value="productId") int productId) throws Exception {
+                              @RequestParam(value="productId") int productId
+                              ) throws Exception {
         ModelAndView mav = new ModelAndView("more_product");
-
-        List<Shop> moreProduct = shopService.getMore();
+        Shop paramData = new Shop();
+        paramData.setProductId(productId);
+        List<Shop> moreProduct = shopService.getMore(paramData);
 
         mav.addObject("moreProduct", moreProduct);
 

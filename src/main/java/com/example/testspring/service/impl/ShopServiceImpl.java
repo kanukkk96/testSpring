@@ -1,6 +1,5 @@
 package com.example.testspring.service.impl;
 
-import com.example.testspring.dao.ShopDao;
 import com.example.testspring.domain.Shop;
 import com.example.testspring.mapper.ShopMapper;
 import com.example.testspring.service.ShopService;
@@ -22,8 +21,8 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
-    public List<Shop> getMore() throws Exception{
-        List<Shop> moreDetail = shopMapper.more_detail();
+    public List<Shop> getMore(Shop paramData) throws Exception{
+        List<Shop> moreDetail = shopMapper.more_detail(paramData);
         return moreDetail;
     }
 
