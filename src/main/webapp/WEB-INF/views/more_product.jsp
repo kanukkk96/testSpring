@@ -35,10 +35,12 @@
 </head>
 
 <body>
+
 <div class="container">
     <h1 class="display-4 text-center">More Detail</h1>
     <br>
     <br>
+    <button type="submit" onclick="location.href='/shop.do';">return to shop</button>
     <div class="row mt-4">
         <table class="table table-dark">
             <thead class="thead-light text-center">
@@ -62,13 +64,11 @@
                     <td>
                         <div class="insertTag">
                             <form action="/tag.do?productId=${more.productId}" method="post" id="insert_tag">
-<%--                                <input name="tags_name" type="text" data-role="tagsinput" name="tags" class="form-control" id="tags_name">--%>
                                 <input name="tags_name" data-role="tagsinput" type="text" size="100" id="tags_name">
                                 <button type="submit" onclick="location.href='/detail.do';">save</button>
                             </form>
                         </div>
                     </td>
-
                 </tr>
             </c:forEach>
             </tbody>

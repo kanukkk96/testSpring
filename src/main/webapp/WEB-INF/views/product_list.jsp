@@ -59,12 +59,6 @@
     <br>
     <h1 class="display-4 text-center">shopping category</h1>
     <br>
-<%--    <div class="saveData">--%>
-<%--        <form action="/save.do" method="post" id="save_data">--%>
-<%--            <button type="submit" onclick="location.href='save_list.jsp'">insert new dress</button>--%>
-<%--            &lt;%&ndash;        <button type="button" onclick="location.href='test.do' " class="btn btn-success">watch for saved table</button>&ndash;%&gt;--%>
-<%--        </form>--%>
-<%--    </div>--%>
     <button type="submit" onclick="location.href='/save.do'">insert new dress</button>
     <br>
     <div class="row mt-4">
@@ -95,22 +89,6 @@
         </table>
     </div>
 </div>
-
-
-<%--<div class="row mt-5">--%>
-<%--    <div class="col-md-6 offset-3 mt-5">--%>
-<%--        <div class="card">--%>
-<%--            <div class="card-header bg-info text-white">--%>
-<%--                <h2><strong>tag 연습</strong></h2>--%>
-<%--            </div>--%>
-<%--            <div class="card-body">--%>
-<%--                <label>Tags :</label>--%>
-<%--                <input type="text" data-role="tagsinput" name="tags" class="form-control">--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</div>--%>
-
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">

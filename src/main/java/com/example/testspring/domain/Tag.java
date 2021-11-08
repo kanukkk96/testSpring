@@ -2,17 +2,17 @@ package com.example.testspring.domain;
 
 public class Tag {
 
-    private int tagsId;
+//    private int tagsId;
     private String tagsName;
     private int productId;
 
-    public int getTagsId() {
-        return tagsId;
-    }
+//    public int getTagsId() {
+//        return tagsId;
+//    }
 
-    public void setTagsId(int tagsId) {
-        this.tagsId = tagsId;
-    }
+//    public void setTagsId(int tagsId) {
+//        this.tagsId = tagsId;
+//    }
 
     public String getTagsName() {
         return tagsName;
