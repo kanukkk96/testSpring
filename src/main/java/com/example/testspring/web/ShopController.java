@@ -35,12 +35,12 @@ public class ShopController {
 
     @RequestMapping("detail.do") // 쇼핑리스트 (detail 포함 - 각각 제품의 product_id를 이용해 불러냄)
     public ModelAndView test2(HttpServletRequest req, HttpServletResponse res,
-                              @RequestParam(value="productId") int productId
+                              @RequestParam(value="productId") int productId //requestParam은 productId만 받아옴
                               ) throws Exception {
-        ModelAndView mav = new ModelAndView("more_product");
-        Shop paramData = new Shop();
+        ModelAndView mav = new ModelAndView("more_product"); // 보여줄 view의 내용
+        Shop paramData = new Shop(); //paramData 선언 (Shop과 연관)
         paramData.setProductId(productId);
-        List<Shop> moreProduct = shopService.getMore(paramData);
+        List<Shop> moreProduct = shopService.getMore(paramData); //paramData가 id값을 받았고 그 id값에 해당하는 데이터에 접급하기 때문
 
         mav.addObject("moreProduct", moreProduct);
 
@@ -65,7 +65,7 @@ public class ShopController {
                               @RequestParam(value="clothes_size") String clothes_size,
                               @RequestParam(value="clothes_review") String clothes_review) throws Exception
     {
-        Shop shop = new Shop();
+        Shop shop = new Shop(); //shop 생성, -> 받고 싶은 내용들을 set~로 넣어줌
         shop.setClothes(clothes);
         shop.setColor(color);
         shop.setClothesSize(clothes_size);
@@ -74,7 +74,7 @@ public class ShopController {
         shopService.insert_data(shop);
         ModelAndView mav = new ModelAndView("save_list");
 
-        List<Shop> saveList = shopService.getShopList();
+        List<Shop> saveList = shopService.getShopList(); //id값 뿐만 아닌 전체를 받기 때문
 
         mav.addObject("saveList", saveList);
 
