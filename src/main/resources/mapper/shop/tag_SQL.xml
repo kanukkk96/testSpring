@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.testspring.mapper.TagMapper">
+
+
+    <select id="selectTag" resultType="TagVO">
+        SELECT
+            tags_id
+             , tags_name
+             , product_id
+        FROM tags
+    </select>
+
+    <insert id="insert_tag" parameterType="TagVO">
+        INSERT INTO tags(tags_name,product_id)
+        VALUES (#{tagsName},#{productId})
+    </insert>
+
+</mapper>

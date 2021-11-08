@@ -60,8 +60,12 @@
                     <td>${more.clothesSize}</td>
                     <td>${more.clothesReview}</td>
                     <td>
-                        <div class="card-body">
-                            <input type="text" data-role="tagsinput" name="tags" class="form-control">
+                        <div class="insertTag">
+                            <form action="/tag.do?productId=${more.productId}" method="post" id="insert_tag">
+<%--                                <input name="tags_name" type="text" data-role="tagsinput" name="tags" class="form-control" id="tags_name">--%>
+                                <input name="tags_name" data-role="tagsinput" type="text" size="100" id="tags_name">
+                                <button type="submit" onclick="location.href='/detail.do';">save</button>
+                            </form>
                         </div>
                     </td>
 

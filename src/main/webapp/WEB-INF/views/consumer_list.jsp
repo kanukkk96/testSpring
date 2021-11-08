@@ -15,7 +15,7 @@
             width: 50%;
         }
         .label-info{
-            background-color: #17a2b8;
+            background-color: #000000;
         }
         .label {
             display: inline-block;
@@ -60,8 +60,9 @@
                     <td>${consumer.age}</td>
                     <td>${consumer.etc}</td>
                     <td>
-                        <div class="card-body">
-                            <input type="text" data-role="tagsinput" name="tags" class="form-control">
+                        <div class="insertTag">
+<%--                        <div class="card-body">--%>
+                            <input name="tags_name" type="text" data-role="tagsinput" name="tags" class="form-control">
                         </div>
                     </td>
                 </tr>

@@ -1,6 +1,7 @@
 package com.example.testspring.service;
 
 import com.example.testspring.domain.Shop;
+import com.example.testspring.domain.Tag;
 
 import java.util.List;
 

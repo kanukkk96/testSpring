@@ -51,7 +51,7 @@
 </head>
 
 <body>
-<form name="goDetailFrm" action="detail.do"  method="post">
+<form name="goDetailFrm" action="detail.do"  method="get">
     <input type="text" id="productId" name="productId" value="">
 </form>
 <div class="container">
@@ -71,7 +71,7 @@
         <table class="table table-dark">
             <thead class="thead-light text-center">
             <tr>
-                <th>번호</th>
+<%--                <th>번호</th>--%>
                 <th>옷</th>
                 <th>색상</th>
                 <th>사이즈</th>
@@ -81,7 +81,7 @@
             <tbody class="text-center">
             <c:forEach var="product" items="${productList}">
                 <tr>
-                    <td>${product.productId}</td>
+<%--                    <td>${product.productId}</td>--%>
                     <td>${product.clothes}</td>
                     <td>${product.color}</td>
                     <td>${product.clothesSize}</td>

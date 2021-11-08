@@ -31,4 +31,6 @@ public class ShopServiceImpl implements ShopService {
         shopMapper.insert_data(shop);
     }
 
+
+
 }
