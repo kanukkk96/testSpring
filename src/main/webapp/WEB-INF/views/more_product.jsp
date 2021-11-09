@@ -34,13 +34,19 @@
     <title>Detail Page</title>
 
 <%--    <script type="text/javascript">--%>
-<%--        function splitTags(name) {--%>
-<%--            var items = items.split(",");--%>
+<%--        function splitTags(items) {--%>
+<%--            // var items = items.split(",");--%>
+<%--            //--%>
+<%--            // items.getElementById("tags_name").value = name;--%>
+<%--            // splitTags.--%>
+<%--            //--%>
+<%--            // // commaSpilt.$("tags_name");--%>
+<%--            var items = $("tags_name");--%>
+<%--            items.getElementsByName = items;--%>
 
-<%--            items.getElementById("tags_name").value = name;--%>
-<%--            splitTags.apply();--%>
+<%--            var result = items.split(',');--%>
 
-<%--            // commaSpilt.$("tags_name");--%>
+<%--            return result;--%>
 <%--        }--%>
 <%--    </script>--%>
 </head>
@@ -82,7 +88,6 @@
                 </tr>
             </c:forEach>
             </tbody>
-            <!--<div class="form-row float-right"><button type="button" class="btn btn-outline-primary">Primary</button></div>-->
         </table>
     </div>
 </div>

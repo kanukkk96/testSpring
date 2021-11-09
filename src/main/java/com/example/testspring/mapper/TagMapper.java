@@ -10,5 +10,7 @@ import java.util.List;
 public interface TagMapper {
 
     public void insert_tag(Tag getTag);
+    public List<Tag> selectTag() throws Exception;
+
 
 }

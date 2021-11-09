@@ -1,5 +1,6 @@
 package com.example.testspring.service.impl;
 
+import com.example.testspring.domain.Shop;
 import com.example.testspring.domain.Tag;
 import com.example.testspring.mapper.TagMapper;
 import com.example.testspring.service.TagService;
@@ -18,6 +19,12 @@ public class TagServiceImpl implements TagService {
     @Override
     public void insert_tag(Tag getTag) throws Exception {
         tagMapper.insert_tag(getTag);
+    }
+
+    @Override
+    public List<Tag> selectTag() throws Exception{
+        List<Tag> tagList = tagMapper.selectTag();
+        return tagList;
     }
 
 

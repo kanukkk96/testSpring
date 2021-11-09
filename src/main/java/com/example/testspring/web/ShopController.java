@@ -2,7 +2,6 @@ package com.example.testspring.web;
 
 import com.example.testspring.domain.Shop;
 import com.example.testspring.domain.Tag;
-import com.example.testspring.mapper.ShopMapper;
 import com.example.testspring.service.ShopService;
 import com.example.testspring.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.lang.NullPointerException;
 import java.util.List;
 
 
@@ -19,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class ShopController {
+
+
 
     @Autowired
     private ShopService shopService;
@@ -40,10 +40,10 @@ public class ShopController {
 
     @RequestMapping("detail.do") // 쇼핑리스트 (detail 포함 - 각각 제품의 product_id를 이용해 불러냄)
     public ModelAndView test2(HttpServletRequest req, HttpServletResponse res,
-                              @RequestParam(value="productId") int productId //requestParam은 productId만 받아옴
+                              @RequestParam(value = "productId") int productId //requestParam은 productId만 받아옴
 //                              @RequestParam(value="tags_id") int tagsId,
 //                              @RequestParam(value="tags_name") String tagsName
-                              ) throws Exception {
+    ) throws Exception {
         ModelAndView mav = new ModelAndView("more_product"); // 보여줄 view의 내용
         Shop paramData = new Shop(); //paramData 선언 (Shop과 연관)
 //        Tag getTag = new Tag();
@@ -63,8 +63,7 @@ public class ShopController {
     }
 
     @GetMapping("save.do") // clothes_review까지 기록해 save
-    public ModelAndView test1(HttpServletRequest req, HttpServletResponse res) throws Exception
-    {
+    public ModelAndView test1(HttpServletRequest req, HttpServletResponse res) throws Exception {
         ModelAndView mav = new ModelAndView("save_list");
 
         List<Shop> saveList = shopService.getShopList();
@@ -73,13 +72,13 @@ public class ShopController {
 
         return mav;
     }
+
     @PostMapping("shop.do")
     public ModelAndView test1(HttpServletRequest req, HttpServletResponse res,
-                              @RequestParam(value="clothes") String clothes,
-                              @RequestParam(value="color") String color,
-                              @RequestParam(value="clothes_size") String clothes_size,
-                              @RequestParam(value="clothes_review") String clothes_review) throws Exception
-    {
+                              @RequestParam(value = "clothes") String clothes,
+                              @RequestParam(value = "color") String color,
+                              @RequestParam(value = "clothes_size") String clothes_size,
+                              @RequestParam(value = "clothes_review") String clothes_review) throws Exception {
         Shop shop = new Shop(); //shop 생성, -> 받고 싶은 내용들을 set~로 넣어줌
         shop.setClothes(clothes);
         shop.setColor(color);
@@ -95,21 +94,44 @@ public class ShopController {
 
         return mav;
     }
+
     @PostMapping("tag.do")
-    public ModelAndView test2(HttpServletRequest req, HttpServletResponse res,
-                              @RequestParam(value="tags_name") String tags_name,
-                              @RequestParam(value="productId") int productId
-                              ) throws Exception
-    {
+    public Object test2(HttpServletRequest req, HttpServletResponse res,
+                        @RequestParam(value = "tags_name") String tags_name,
+                        @RequestParam(value = "productId") int productId
+    ) throws Exception {
         Shop paramData = new Shop();
         paramData.setProductId(productId);
 
         Tag getTag = new Tag();
 
-        getTag.setTagsName(tags_name);
-        getTag.setProductId(productId);
+        // , 없을 경우 예외 처리
+        String[] tag_list = tags_name.split(",");
+        List<Tag> testTag = tagService.selectTag();
+        getTag.getTagsName(); // 대기
 
-        tagService.insert_tag(getTag); //태그 추가 - 각 해당 id에 맞는값 추가해야함
+        for (int i = 0; i < tag_list.length; i++) {
+            //중복 체크 태그 등록
+            //기존에 다 지우고 다시 Insert
+//            if(tags_name.equals(tag_list[i])) {
+//                return false;
+//            }
+
+
+//            if(testTag.equals(tag_list[i])){
+//                return false;
+//            } else {break;}
+
+            getTag.setTagsName(tag_list[i]);
+            getTag.setProductId(productId);
+            tagService.insert_tag(getTag); //태그 추가 - 각 해당 id에 맞는값 추가해야함
+
+
+        }
+
+//        getTag.setTagsName(tags_name);
+//        getTag.setProductId(productId);
+//        tagService.insert_tag(getTag);
 
         ModelAndView mav = new ModelAndView("more_product");
 
@@ -119,6 +141,5 @@ public class ShopController {
 
         return mav;
     }
-
 
 }
