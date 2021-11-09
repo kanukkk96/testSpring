@@ -108,14 +108,25 @@ public class ShopController {
         // , 없을 경우 예외 처리
         String[] tag_list = tags_name.split(",");
         List<Tag> testTag = tagService.selectTag();
-        getTag.getTagsName(); // 대기
+        //getTag.getTagsName(); // 대기
+
+
 
         for (int i = 0; i < tag_list.length; i++) {
+            for(int j =0 ; j < testTag.size(); j++){
+                if(testTag.get(j).equals(tag_list[i])){
+
+                }
+            }
             //중복 체크 태그 등록
             //기존에 다 지우고 다시 Insert
 //            if(tags_name.equals(tag_list[i])) {
 //                return false;
 //            }
+            getTag.getTagsName();
+            if(getTag.getTagsName() != tag_list[i]){
+                return false;
+            } else {break;}
 
 
 //            if(testTag.equals(tag_list[i])){
