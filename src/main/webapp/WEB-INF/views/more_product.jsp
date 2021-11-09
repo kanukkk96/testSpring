@@ -32,13 +32,23 @@
     </style>
     <meta charset="UTF-8">
     <title>Detail Page</title>
+
+<%--    <script type="text/javascript">--%>
+<%--        function splitTags(name) {--%>
+<%--            var items = items.split(",");--%>
+
+<%--            items.getElementById("tags_name").value = name;--%>
+<%--            splitTags.apply();--%>
+
+<%--            // commaSpilt.$("tags_name");--%>
+<%--        }--%>
+<%--    </script>--%>
 </head>
 
 <body>
 
 <div class="container">
     <h1 class="display-4 text-center">More Detail</h1>
-    <br>
     <br>
     <button type="submit" onclick="location.href='/shop.do';">return to shop</button>
     <div class="row mt-4">

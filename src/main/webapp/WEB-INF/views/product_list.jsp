@@ -4,101 +4,67 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" integrity="sha512-xmGTNt20S0t62wHLmQec2DauG9T+owP9e6VU8GigI0anN7OXLip9i7IwEhelasml2osdxX71XcYm6BQunTQeQg==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha256-OFRAJNoaD8L3Br5lglV7VyLRf0itmoBzWUoM+Sji4/8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js" integrity="sha512-VvWznBcyBJK71YKEKDMpZ0pCVxjNuKwApp4zLF3ul+CiflQi6aIJR+aZCP/qWsoFBA28avL5T5HA+RE+zrGQYg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput-angular.min.js" integrity="sha512-KT0oYlhnDf0XQfjuCS/QIw4sjTHdkefv8rOJY5HHdNEZ6AmOh1DW/ZdSqpipe+2AEXym5D0khNu95Mtmw9VNKg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/product_list.css">
+
     <script type="text/javascript">
-        function goDetail(idx){
+        function goDetail(idx) {
             var goDetailFrm = document.goDetailFrm;
 
             document.getElementById("productId").value = idx;
             goDetailFrm.submit();
         }
-
     </script>
 
-    <style type="text/css">
-        .bootstrap-tagsinput{
-            width: 100%;
-        }
-        .label-info{
-            background-color: #1d89be;
-        }
-        .label {
-            display: inline-block;
-            padding: .25em .4em;
-            font-size: 75%;
-            font-weight: 700;
-            line-height: 1;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: baseline;
-            border-radius: .25rem;
-            transition: color .15s ease-in-out,background-color .15s ease-in-out,
-            border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-        }
-    </style>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Spring Shopping list</title>
 </head>
 
 <body>
-<form name="goDetailFrm" action="detail.do"  method="get">
-    <input type="text" id="productId" name="productId" value="">
-</form>
-<div class="container">
-    <br>
-    <br>
-    <h1 class="display-4 text-center">shopping category</h1>
-    <br>
-    <button type="submit" onclick="location.href='/save.do'">insert new dress</button>
-    <br>
-    <div class="row mt-4">
-        <table class="table table-dark">
-            <thead class="thead-light text-center">
-            <tr>
-<%--                <th>번호</th>--%>
-                <th>옷</th>
-                <th>색상</th>
-                <th>사이즈</th>
-                <th>디테일</th>
-            </tr>
-            </thead>
-            <tbody class="text-center">
-            <c:forEach var="product" items="${productList}">
+
+<div class="wrap">
+    <form name="goDetailFrm" action="detail.do" method="get">
+        <input type="text" id="productId" name="productId" value="">
+    </form>
+    <div class="container">
+
+        <h1 class="title spoqa-bold">shopping category</h1>
+        <div class="btn-con">
+            <button class="insert-btn" type="submit" onclick="location.href='/save.do'">insert new dress</button>
+        </div>
+
+        <div class="row mt-4">
+            <table class="cate-table">
+                <thead class="thead-light text-center">
                 <tr>
-<%--                    <td>${product.productId}</td>--%>
-                    <td>${product.clothes}</td>
-                    <td>${product.color}</td>
-                    <td>${product.clothesSize}</td>
-                    <td><div class="form-row float-center">
-                        <button type="submit" class="btn btn-outline-primary" onclick='goDetail(${product.productId})'>DETAIL
-                        </button></div></td>
+                    <%--                <th>번호</th>--%>
+                    <th>옷</th>
+                    <th>색상</th>
+                    <th>사이즈</th>
+                    <th>디테일</th>
                 </tr>
-            </c:forEach>
-            </tbody>
-            <!--<div class="form-row float-right"><button type="button" class="btn btn-outline-primary">Primary</button></div>-->
-        </table>
+                </thead>
+                <tbody class="text-center">
+                <c:forEach var="product" items="${productList}">
+                    <tr>
+                            <%--<td>${product.productId}</td>--%>
+                        <td>${product.clothes}</td>
+                        <td>${product.color}</td>
+                        <td>${product.clothesSize}</td>
+                        <td>
+                            <div class="form-row float-center">
+                                <button type="submit" class="detail-btn btn btn-outline-primary"
+                                        onclick='goDetail(${product.productId})'>DETAIL
+                                </button></div>
+                        </td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+                <!--<div class="form-row float-right"><button type="button" class="btn btn-outline-primary">Primary</button></div>-->
+            </table>
+        </div>
     </div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-</script>
 
 </body>
 
