@@ -30,5 +30,4 @@ public class Tag {
         this.productId = productId;
     }
 
-
 }

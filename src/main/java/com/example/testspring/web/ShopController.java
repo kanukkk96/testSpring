@@ -106,43 +106,24 @@ public class ShopController {
         Tag getTag = new Tag();
 
         // , 없을 경우 예외 처리
-        String[] tag_list = tags_name.split(",");
-        List<Tag> testTag = tagService.selectTag();
-        //getTag.getTagsName(); // 대기
-
-
+        String[] tag_list = tags_name.split(","); // tagsinput에서 들어온 값을 ','기준으로 분리
+        List<Tag> testTag = tagService.selectTag(); // tag_SQL에서 select한 값
 
         for (int i = 0; i < tag_list.length; i++) {
+            boolean test = true;
             for(int j =0 ; j < testTag.size(); j++){
-                if(testTag.get(j).equals(tag_list[i])){
 
+                if(!testTag.get(j).getTagsName().equals(tag_list[i])){
+                    test = false;
                 }
             }
-            //중복 체크 태그 등록
-            //기존에 다 지우고 다시 Insert
-//            if(tags_name.equals(tag_list[i])) {
-//                return false;
-//            }
-            getTag.getTagsName();
-            if(getTag.getTagsName() != tag_list[i]){
-                return false;
-            } else {break;}
-
-
-//            if(testTag.equals(tag_list[i])){
-//                return false;
-//            } else {break;}
-
-            getTag.setTagsName(tag_list[i]);
-            getTag.setProductId(productId);
-            tagService.insert_tag(getTag); //태그 추가 - 각 해당 id에 맞는값 추가해야함
-
-
+            if (test) {
+                getTag.setTagsName(tag_list[i]);
+                getTag.setProductId(productId);
+                tagService.insert_tag(getTag);
+            }
         }
 
-//        getTag.setTagsName(tags_name);
-//        getTag.setProductId(productId);
-//        tagService.insert_tag(getTag);
 
         ModelAndView mav = new ModelAndView("more_product");
 

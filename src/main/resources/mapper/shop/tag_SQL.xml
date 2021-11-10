@@ -6,9 +6,7 @@
 
     <select id="selectTag" resultType="TagVO">
         SELECT
-            tags_id
-             , tags_name
-             , product_id
+             tags_name
         FROM tags
     </select>
 
