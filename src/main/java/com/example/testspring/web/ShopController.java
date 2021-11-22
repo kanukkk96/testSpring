@@ -113,7 +113,7 @@ public class ShopController {
             boolean test = true;
             for(int j =0 ; j < testTag.size(); j++){
 
-                if(!testTag.get(j).getTagsName().equals(tag_list[i])){
+                if(testTag.get(j).getTagsName().equals(tag_list[i])){
                     test = false;
                 }
             }
